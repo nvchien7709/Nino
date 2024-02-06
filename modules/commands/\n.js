@@ -129,13 +129,13 @@ const tao = so[Math.floor(Math.random()*so.length)];
     image.push(stream);
 };
   const msg = {
-    body: `😻 ==== [ TNTXTRICK ] ==== 😻\n━━━━━━━━━━━━━━━\n[⏰] → Time: ${timeNow}\n[⏳] → Thời gian hoạt động: ${hours}:${minutes}:${seconds}\n[⚙️] → Tình trạng: ${trinhtrang}\n[⏱️] → Tốc độ xử lí: ${xuly} giây\n[📊] → Độ trễ: ${Date.now() - timeStart}ms\n[💾] → Lồng : ${os.cpus().length}
+    body: `💤 ==== [ 𝙽𝚒𝚗𝚘 ] ==== 💤\n━━━━━━━━━━━━━━━\n[⏰] → Time: ${timeNow}\n[⏳] → Thời gian hoạt động: ${hours}:${minutes}:${seconds}\n[⚙️] → Tình trạng: ${trinhtrang}\n[⏱️] → Tốc độ xử lí: ${xuly} giây\n[📊] → Độ trễ: ${Date.now() - timeStart}ms\n[💾] → Lồng : ${os.cpus().length}
 ━━━━━━━━━━━━━━━━━
-❤️ Xem API
-🥰 Xem thông tin nhóm
-😆 Khởi động lại bot
-😮 Xem id box
-😍 Thông tin về bot
+🍓 Xem API
+🎶 Xem thông tin nhóm
+👤 Khởi động lại bot
+❗ Xem id box
+🐻 Thông tin về bot
 ━━━━━━━━━━━━━━━━━
 👑 Thả icon vào tin nhắn này nếu bạn muốn xem`,
     attachment: image
