@@ -1,11 +1,11 @@
 ## Info
-👤 Name: TNTXTRICK
+👤 Name: Ng Văn Chiến
 
-🌐 Fb: https://www.facebook.com/tntxtrick
+🌐 Fb: https://www.facebook.com/vanchiendzs
 
-🔐 Github: https://github.com/TNTxTrick
+🎶 Tiktok: https://www.tiktok.com/@ninokawaiii
 
-## Hướng dẫn sử dụng file của TNT
+## Hướng dẫn sử dụng file của Nino
 B1: Qua shell, nhập:
 ```
 npm i
