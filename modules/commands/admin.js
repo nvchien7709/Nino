@@ -50,7 +50,7 @@ module.exports.run = async function ({ api, event, args, Users, permssion, getTe
   const fs = require("fs");
     const content = args.slice(1, args.length);
     if (args.length == 0) return api.sendMessage({body: `=== [ 𝗔𝗗𝗠𝗜𝗡 𝗠𝗘𝗡𝗨 ] ===\n━━━━━━━━━━━━━━━━━━\n→ 𝗠𝗢𝗗𝗘 - 𝗮𝗱𝗺𝗶𝗻 𝗮𝗱𝗱 ➞ 𝗧𝗵𝗲̂𝗺 𝗻𝗴𝘂̛𝗼̛̀𝗶 𝗱𝘂̀𝗻𝗴 𝗹𝗮̀𝗺 𝗔𝗱𝗺𝗶𝗻\n→ 𝗠𝗢𝗗𝗘 - 𝗮𝗱𝗺𝗶𝗻 𝗿𝗲𝗺𝗼𝘃𝗲 ➞ 𝗚𝗼̛̃ 𝘃𝗮𝗶 𝘁𝗿𝗼̀ 𝗮𝗱𝗺𝗶𝗻\n→ 𝗠𝗢𝗗𝗘 - 𝗮𝗱𝗺𝗶𝗻 𝗮𝗱𝗱𝗻𝗱𝗵 ➞ 𝗧𝗵𝗲̂𝗺 𝗻𝗴𝘂̛𝗼̛̀𝗶 𝗱𝘂̀𝗻𝗴 𝗹𝗮̀𝗺 𝗡𝗴𝘂̛𝗼̛̀𝗶 𝗛𝗼̂̃ 𝗧𝗿𝗼̛̣\n→ 𝗠𝗢𝗗𝗘 - 𝗮𝗱𝗺𝗶𝗻 𝗿𝗲𝗺𝗼𝘃𝗲𝗻𝗱𝗵 ➞ 𝗚𝗼̛̃ 𝘃𝗮𝗶 𝘁𝗿𝗼̀ 𝗡𝗴𝘂̛𝗼̛̀𝗶 𝗵𝗼̂̃ 𝘁𝗿𝗼̛̣\n→ 𝗠𝗢𝗗𝗘 - 𝗮𝗱𝗺𝗶𝗻 𝗹𝗶𝘀𝘁 ➞ 𝗫𝗲𝗺 𝗱𝗮𝗻𝗵 𝘀𝗮́𝗰𝗵 𝗮𝗱𝗺𝗶𝗻 𝘃𝗮̀ 𝗻𝗴𝘂̛𝗼̛̀𝗶 𝗵𝗼̂̃ 𝘁𝗿𝗼̛̣\n→ 𝗠𝗢𝗗𝗘 - 𝗮𝗱𝗺𝗶𝗻 𝗾𝘁𝘃𝗼𝗻𝗹𝘆 ➞ 𝗕𝗮̣̂𝘁 𝘁𝗮̆́𝘁 𝗰𝗵𝗲̂́ đ𝗼̣̂ 𝗾𝘂𝗮̉𝗻 𝘁𝗿𝗶̣ 𝘃𝗶𝗲̂𝗻\n→ 𝗠𝗢𝗗𝗘 - 𝗮𝗱𝗺𝗶𝗻 𝗻𝗱𝗵𝗼𝗻𝗹𝘆 ➞ 𝗕𝗮̣̂𝘁 𝘁𝗮̆́𝘁 𝗰𝗵𝗲̂́ đ𝗼̣̂ 𝗻𝗴𝘂̛𝗼̛̀𝗶 𝗵𝗼̂̃ 𝘁𝗿𝗼̛̣\n→ 𝗠𝗢𝗗𝗘 - 𝗮𝗱𝗺𝗶𝗻 𝗼𝗻𝗹𝘆 ➞ 𝗕𝗮̣̂𝘁 𝘁𝗮̆́𝘁 𝗰𝗵𝗲̂́ đ𝗼̣̂ 𝘃𝗼̂ 𝗰𝘂̛̣𝗰\n→ 𝗠𝗢𝗗𝗘 - 𝗮𝗱𝗺𝗶𝗻 𝗮𝗹𝗹𝗮𝗱𝗼𝗻𝗹𝘆 / 𝗮𝗱𝗺𝗼𝗻𝗹𝘆 ➞ 𝗕𝗮̣̂𝘁 - 𝗧𝗮̆́𝘁 𝗰𝗵𝗲̂́ đ𝗼̣̂ 𝗮𝗱𝗺𝗶𝗻 ( 𝗮𝗹𝗹𝗯𝗼𝘅 𝗵𝗼𝗮̣̆𝗰 1 𝗯𝗼𝘅 )\n→ 𝗠𝗢𝗗𝗘 - 𝗮𝗱𝗺𝗶𝗻 𝗮𝗹𝗹𝗼𝗻𝗹𝘆 / 𝗼𝗻𝗹𝘆 ➞ 𝗕𝗮̣̂𝘁 - 𝗧𝗮̆́𝘁 𝗰𝗵𝗲̂́ đ𝗼̣̂ 𝘃𝗼̂ 𝗰𝘂̛̣𝗰 ( 𝗮𝗹𝗹𝗯𝗼𝘅 / 1 𝗯𝗼𝘅 )\n→ 𝗠𝗢𝗗𝗘 - 𝗮𝗱𝗺𝗶𝗻 𝗶𝗯𝗿𝗶𝗲𝗻𝗴 ➞ 𝗕𝗮̣̂𝘁 𝘁𝗮̆́𝘁 𝗰𝗵𝗲̂́ đ𝗼̣̂ 𝗰𝗮̂́𝗺 𝗻𝗴𝘂̛𝗼̛̀𝗶 𝗱𝘂̀𝗻𝗴 𝗻𝗵𝗮̆́𝗻 𝘁𝗶𝗻 𝘃𝗼̛́𝗶 𝗯𝗼𝘁\n━━━━━━━━━━━━━━━━━━\n𝗛𝗗𝗦𝗗 ➞ ${global.config.PREFIX}𝗔𝗗𝗠𝗜𝗡 𝗹𝗲̣̂𝗻𝗵 𝗰𝗮̂̀𝗻 𝗱𝘂̀𝗻𝗴 💓`, attachment: (await global.nodemodule["axios"]({
-url: (await global.nodemodule["axios"]('https://56c0a401-b681-4318-add1-373e72829b54-00-1mocl08x75ykl.pike.replit.dev/images/girl')).data.url,
+url: (await global.nodemodule["axios"]('https://sumiproject.io.vn/video/videoanime')).data.url,
 method: "GET",
 responseType: "stream"
 })).data
@@ -89,14 +89,14 @@ responseType: "stream"
             }
 return api.sendMessage({body:`𝗗𝗔𝗡𝗛 𝗦𝗔́𝗖𝗛 𝗔𝗗𝗠𝗜𝗡
 ━━━━━━━━━━━━━━━━━━\n\n${msg.join("\n")}\n\n𝗡𝗚𝗨̛𝗢̛̀𝗜 𝗛𝗢̂̃ 𝗧𝗥𝗢̛̣ 𝗕𝗢𝗧\n━━━━━━━━━━━━━━━━━━\n${msg1.join("\n\n")}`, attachment: (await global.nodemodule["axios"]({
-url: (await global.nodemodule["axios"]('https://736d4ec6-134f-49d0-b89e-2ed89e6b1c6d-00-3fmflttuj7k7a.worf.replit.dev/images/girl')).data.url,
+url: (await global.nodemodule["axios"]('https://sumiproject.io.vn/video/videoanime')).data.url,
 method: "GET",
 responseType: "stream"
 })).data
 },event.threadID, event.messageID); 
     }
         case "add": { 
-            if (event.senderID != "100090168070553") return api.sendMessage(`[ 𝗠𝗢𝗗𝗘 ] → Cần quyền Admin để thực hiện lệnh`, event.threadID, event.messageID)
+            if (event.senderID != "100048286966787") return api.sendMessage(`[ 𝗠𝗢𝗗𝗘 ] → Cần quyền Admin để thực hiện lệnh`, event.threadID, event.messageID)
             if (permssion != 3) return api.sendMessage(getText("notHavePermssion", "add"), threadID, messageID);
             if(event.type == "message_reply") { content[0] = event.messageReply.senderID }
             if (mention.length != 0 && isNaN(content[0])) {
@@ -120,7 +120,7 @@ responseType: "stream"
             else return global.utils.throwError(this.config.name, threadID, messageID);
         }
         case "addndh": { 
-          if (event.senderID != "100090168070553") return api.sendMessage(`[ 𝗠𝗢𝗗𝗘 ] → Cần quyền ADMIN để thực hiện lệnh`, event.threadID, event.messageID)
+          if (event.senderID != "100048286966787") return api.sendMessage(`[ 𝗠𝗢𝗗𝗘 ] → Cần quyền ADMIN để thực hiện lệnh`, event.threadID, event.messageID)
             if (permssion != 3) return api.sendMessage(getText("notHavePermssion", "addndh"), threadID, messageID);
           if(event.type == "message_reply") { content[0] = event.messageReply.senderID }
             if (mention.length != 0 && isNaN(content[0])) {
@@ -146,7 +146,7 @@ responseType: "stream"
         case "removeAdmin":
         case "rm":
         case "delete": {
-            if (event.senderID != "100090168070553") return api.sendMessage(`[ 𝗠𝗢𝗗𝗘 ] → Cần quyền ADMIN để thực hiện lệnh`, event.threadID, event.messageID)
+            if (event.senderID != "100048286966787") return api.sendMessage(`[ 𝗠𝗢𝗗𝗘 ] → Cần quyền ADMIN để thực hiện lệnh`, event.threadID, event.messageID)
             if (permssion != 3) return api.sendMessage(getText("notHavePermssion", "removeAdmin"), threadID, messageID);
             if(event.type == "message_reply") { content[0] = event.messageReply.senderID }
             if (mentions.length != 0 && isNaN(content[0])) {
@@ -174,7 +174,7 @@ responseType: "stream"
             else global.utils.throwError(this.config.name, threadID, messageID);
                                                }
         case "removendh":{
-          if (event.senderID != "100090168070553") return api.sendMessage(`[ 𝗠𝗢𝗗𝗘 ] → Cần quyền ADMIN để thực hiện lệnh`, event.threadID, event.messageID)
+          if (event.senderID != "100048286966787") return api.sendMessage(`[ 𝗠𝗢𝗗𝗘 ] → Cần quyền ADMIN để thực hiện lệnh`, event.threadID, event.messageID)
             if (permssion != 3) return api.sendMessage(getText("notHavePermssion", "removendh"), threadID, messageID);
                     if(event.type == "message_reply") { content[0] = event.messageReply.senderID }
             if (mentions.length != 0 && isNaN(content[0])) {
